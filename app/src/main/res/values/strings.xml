@@ -1,0 +1,130 @@
+<resources>
+    <string name="app_name">PhotoTweak</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+
+    <string name="app_description">PhotoTweak is used to control lighting levels. Each channel represents one or more lights attached to the physical fader channel.
+        Connection to device is automatic, network configuariont is specified in settings.
+    A demo mode is available if physical device is not present and can be turned in settings.
+</string>
+    <string name="app_level_description">Channel output power from 0 - 100% </string>
+    <string name="app_fade_description">Rate at which channel transitions between levels (0 = instant change).</string>
+    <string name="app_settings_description">Settings menu</string>
+    <string name="app_info_description">this. Use settings option to disable this screen on startup</string>
+
+    <string name="infopage">
+        <html>
+        <h1 style="text-align: center;">PhotoTweak</h1>
+        </html>
+    </string>
+
+    Fade is the rate at which light transitions between power levels (0 = instant change).
+
+
+    <string name="app_author">Copyright 2017, Mike McDonald</string>
+
+    <string name="app_description_power_level">Power Level is light output power from 0 - 100.  </string>
+    <string name="app_description_fade_rate"> Fade rate is rate at which light fades between levels (0=instant change)  </string>
+    <string name="fragment_LightingPowerLevel_name">Lighting Power Level</string>
+
+    <string name="welcome_tab_name">HOME</string>
+    <string name="level_tab_name">LEVEL</string>
+    <string name="fade_tab_name">FADE</string>
+
+
+    <string name="networkio_error_message">Device connection failed. Check network settings.</string>
+    <string name="networkio_error_retry">Retry</string>
+    <string name="networkio_connecting_message"> Connecting to server @</string>
+    <string name="networkio_connected_message"> Connected to server @</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="action_info">Info</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to SettingsActivity -->
+
+    <string name="pref_networking_title">Network Settings</string>
+    <string name="pref_misc_title">Misc Settings</string>
+
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+
+    <string name="title_activity_splashscreen">SplashscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title_activity_splash">Splash</string>
+</resources>

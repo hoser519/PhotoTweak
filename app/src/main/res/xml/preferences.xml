@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/pref_networking_title"
+        android:key="pref_key_storage_settings">
+        <EditTextPreference
+            android:defaultValue="192.168.0.65"
+            android:key="deviceIP"
+            android:summary="Current IP address of device to which we are connecting"
+            android:title="Device IP Address"></EditTextPreference>
+        <EditTextPreference
+            android:defaultValue="9000"
+            android:key="devicePort"
+            android:summary="Current IP Port of device to which we are connecting"
+            android:title="Device IP Port"></EditTextPreference>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/pref_misc_title"
+        android:key="pref_key_storage_settings">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="demoMode"
+            android:summary="Will allow app to work without the physical device connected"
+            android:title="Enable Demo Mode" />
+    </PreferenceCategory>
+</PreferenceScreen>

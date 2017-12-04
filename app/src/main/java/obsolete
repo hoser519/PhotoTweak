@@ -1,0 +1,78 @@
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/progressOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:animateLayoutChanges="true"
+        android:background="@android:color/black"
+        android:visibility="gone"
+        android:clickable="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/networkio_connect_message"
+                android:textColor="@color/colorPrimary"
+                android:textColorLink="@color/colorPrimary" />
+
+            <ProgressBar
+                android:id="@+id/connectProgressBar"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:indeterminate="true"
+                android:layout_above="@id/editText4"
+                android:visibility="visible" />
+
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+       <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:paddingTop="@dimen/appbar_padding_top"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    app:srcCompat="@drawable/ic_wb_sunny_black_48dp" />
+
+                    // Launch startup screen if settings specify to
+
+                            if (!prefs.getBoolean(SettingsActivity.KEY_PREF_startupInfo, true)) {
+                                ContentFragment fragment = null;
+
+                                fragment = InfoScreen.getInstance(getSupportFragmentManager());
+
+                                if (fragment != null) {
+                                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                                    ft.replace(R.id.content, fragment, fragment.getFragmentTag());
+                                    ft.addToBackStack(null);
+                                    ft.commit();
+                                }
+                            }
