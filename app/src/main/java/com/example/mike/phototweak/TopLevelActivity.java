@@ -245,8 +245,8 @@ public class TopLevelActivity extends AppCompatActivity
         demoMode = prefs.getBoolean(SettingsActivity.KEY_PREF_demoMode,false);
         // Get the network fragment
         mNetwork = NetworkIOFragment.getInstance(getSupportFragmentManager(),
-                prefs.getString(SettingsActivity.KEY_PREF_deviceIP, ""),
-                Integer.parseInt(prefs.getString(SettingsActivity.KEY_PREF_devicePort, "")),
+                prefs.getString(SettingsActivity.KEY_PREF_deviceIP, "192.168.0.65"),
+                Integer.parseInt(prefs.getString(SettingsActivity.KEY_PREF_devicePort, "9000")),
                 demoMode);
 
         // setup the network delay progress spinner
