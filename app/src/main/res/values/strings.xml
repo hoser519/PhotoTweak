@@ -21,7 +21,7 @@
     Fade is the rate at which light transitions between power levels (0 = instant change).
 
 
-    <string name="app_author">Copyright 2017, Mike McDonald</string>
+    <string name="app_author">2017, Mike McDonald</string>
 
     <string name="app_description_power_level">Power Level is light output power from 0 - 100.  </string>
     <string name="app_description_fade_rate"> Fade rate is rate at which light fades between levels (0=instant change)  </string>

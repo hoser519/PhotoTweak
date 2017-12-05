@@ -21,9 +21,25 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Info"
+            android:text="Controls"
             android:textSize="36sp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_wb_sunny_black_48dp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="@string/app_level_description"
+            android:textSize="24sp" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -31,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@color/colorPrimary"
+            android:padding="5dp"
             app:srcCompat="@drawable/ic_hourglass_full_black_48dp" />
 
         <TextView
@@ -39,49 +56,40 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimary"
             android:padding="10dp"
-            android:text="@string/app_fade_description" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            app:srcCompat="@drawable/ic_wb_sunny_black_48dp" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="@string/app_level_description" />
+            android:text="@string/app_fade_description"
+            android:textSize="24sp" />
 
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
+            android:padding="5dp"
             app:srcCompat="@drawable/ic_settings_black_48dp" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="@string/app_settings_description" />
+            android:padding="15dp"
+            android:text="@string/app_settings_description"
+            android:textSize="24sp" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
+            android:padding="5dp"
             app:srcCompat="@drawable/ic_info_black_48dp" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="@string/app_info_description" />
+            android:padding="15dp"
+            android:text="@string/app_info_description"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView"
