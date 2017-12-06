@@ -46,6 +46,8 @@ public class InfoScreenFragment extends DialogFragment {
         return infoScreenFragment;
     }
 
+    // Boileplate Fragment life-cycle callbacks
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

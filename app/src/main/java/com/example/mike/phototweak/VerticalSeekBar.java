@@ -6,6 +6,9 @@ import android.support.v7.widget.AppCompatSeekBar;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
+/**
+ * Vertical Seekbar I found on the Internet
+ */
 
 public class VerticalSeekBar extends AppCompatSeekBar {
 
