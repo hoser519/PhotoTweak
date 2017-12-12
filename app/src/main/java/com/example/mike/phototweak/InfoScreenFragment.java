@@ -11,18 +11,13 @@ import android.view.ViewGroup;
 
 /**
  * A {@link DialogFragment} subclass.
- * Displays an info screen about the 
+ * Displays an info screen about the apps controls
  * Use the {@link InfoScreenFragment#getInstance} factory method to
  * create an instance of this fragment.
  */
 public class InfoScreenFragment extends DialogFragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
     public static final String TAG = "InfoScreenFragment";
-
-
-
     public InfoScreenFragment() {
         // Required empty public constructor
     }
@@ -62,7 +57,6 @@ public class InfoScreenFragment extends DialogFragment {
         return inflater.inflate(R.layout.fragment_info_screen, container, false);
     }
 
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -72,6 +66,5 @@ public class InfoScreenFragment extends DialogFragment {
     public void onDetach() {
         super.onDetach();
     }
-
 
 }

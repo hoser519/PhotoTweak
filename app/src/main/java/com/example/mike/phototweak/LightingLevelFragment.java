@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 /**
  * A {@link ContentFragment} subclass. Implements the seekbar and other widgets
- * required to control power output of lights
+ * as well as network operations to control light power level
  */
 public class LightingLevelFragment extends ContentFragment {
 
@@ -58,9 +58,9 @@ public class LightingLevelFragment extends ContentFragment {
     }
 
     /**
-     * Implement required abstract function to return TAG of this fragmnet
+     * Implementation of required abstract function to return TAG of this fragmnet
      *
-     * @return FragmentManager Tag of this type of Fragment
+     * @return the TAG name of this fragmnet in FragmentManager
      */
     public String getFragmentTag() {
         return TAG;
@@ -70,7 +70,6 @@ public class LightingLevelFragment extends ContentFragment {
      * Invoked by parent Activity when device becomes available on network
      *
      * @param isActive The status of the network
-     * @return A new instance of ContentFragment LightingLevelFragment.
      */
     //
     public void deviceConnectionActive(boolean isActive) {
