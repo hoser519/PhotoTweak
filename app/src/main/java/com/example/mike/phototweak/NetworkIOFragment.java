@@ -50,6 +50,8 @@ public class NetworkIOFragment extends Fragment {
      * @param fragmentManager fragmentManager.
      * @param hostIP          the Host IP address
      * @param hostPort        the Host port
+    * @param demoMode        Are we in demoMode-if so we won't launch the network task
+
      * @return A new or already running instance of NetworkIOFragment fragment.
      */
     public static NetworkIOFragment getInstance(FragmentManager fragmentManager, String hostIP, int hostPort, boolean demoMode) {
@@ -262,7 +264,7 @@ public class NetworkIOFragment extends Fragment {
          * Background network transmitter thread.
          * 1. Establish a Socket conection if not already present.
          * 2. Send all data in outGoing queue. Remains alive as long as userNetworkTaskActive is set
-         * which is controlled by the user through the startNetworkIO/startNetworkIO functions
+         * which is controlled by the UI thread through the startNetworkIO/startNetworkIO functions
          */
 
         @Override
@@ -279,7 +281,7 @@ public class NetworkIOFragment extends Fragment {
                         try {
                             while (userNetworkTaskActive || (!outGoing.isEmpty())) {
                                 if (!outGoing.isEmpty()) {
-                                    Log.v(NetworkIOFragment.class.getSimpleName(), "sending = " + outGoing.peek());
+//                                    Log.v(NetworkIOFragment.class.getSimpleName(), "sending = " + outGoing.peek());
                                     mTcpClient.sendMessage(outGoing.poll());
                                 }
 

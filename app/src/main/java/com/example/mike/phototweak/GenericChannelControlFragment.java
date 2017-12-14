@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-// TODO: This class is incomplete
+// TODO: This class is incomplete and not currently used
 /**
  * A {@link ContentFragment} subclass. Implements the seekbar and other widgets
  * required to control
