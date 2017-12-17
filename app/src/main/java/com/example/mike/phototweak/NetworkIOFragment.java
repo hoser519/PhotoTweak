@@ -36,13 +36,13 @@ public class NetworkIOFragment extends Fragment {
     private String mIPString;
     private int mPort;
     // Indicates user requires network transmission
-    private boolean userNetworkTaskActive;
+    private boolean mUserNetworkTaskActive;
     // Demo mode will suppress any actual network ops from occuring
     private boolean demoMode;
 
     // Queue of device commands to send when the task thread is started. Use the concurrent queue because the UI
     // thread may be adding to queue at same time as it's being dequeued by the task thread.
-    private ConcurrentLinkedQueue<String> outGoing;
+    private ConcurrentLinkedQueue<String> mOutGoing;
 
     /**
      * Static factory method for NetwvorkFragment that sets the IP and Port of the host device it will be interfacing with.
@@ -83,7 +83,7 @@ public class NetworkIOFragment extends Fragment {
         if (mNetworkIOTask == null) {
             if (!demoMode) {
                 mNetworkIOTask = new NetworkIOTask();
-                userNetworkTaskActive = true;
+                mUserNetworkTaskActive = true;
                 mNetworkIOTask.execute();
             }
         }
@@ -94,7 +94,7 @@ public class NetworkIOFragment extends Fragment {
      */
     public synchronized void stopNetworkIO() {
         if (mNetworkIOTask != null) {
-            userNetworkTaskActive = false;
+            mUserNetworkTaskActive = false;
             if (mNetworkIOTask.getStatus() == AsyncTask.Status.FINISHED) {
                 mNetworkIOTask = null;
             }    // NOTE BON:  If we are waiting for Socket.connect it won't kill the task until Socket.connect returns, and then will be killed calling onCancelled).
@@ -108,7 +108,7 @@ public class NetworkIOFragment extends Fragment {
      * @param cmd the command
      */
     public void addToSendQueue(String cmd) {
-        outGoing.add(cmd);
+        mOutGoing.add(cmd);
     }
 
     /**
@@ -158,7 +158,7 @@ public class NetworkIOFragment extends Fragment {
         mIPString = getArguments().getString(KEY_HOSTIP);
         mPort = getArguments().getInt(KEY_HOSTPORT);
         demoMode = getArguments().getBoolean(KEY_DEMOMODE);
-        outGoing = new ConcurrentLinkedQueue<String>();
+        mOutGoing = new ConcurrentLinkedQueue<String>();
     }
 
     @Override
@@ -263,7 +263,7 @@ public class NetworkIOFragment extends Fragment {
         /**
          * Background network transmitter thread.
          * 1. Establish a Socket conection if not already present.
-         * 2. Send all data in outGoing queue. Remains alive as long as userNetworkTaskActive is set
+         * 2. Send all data in mOutGoing queue. Remains alive as long as mUserNetworkTaskActive is set
          * which is controlled by the UI thread through the startNetworkIO/startNetworkIO functions
          */
 
@@ -279,10 +279,10 @@ public class NetworkIOFragment extends Fragment {
                     if (mTcpClient.isConnected()) {
                         // Send any pending message. If we couldn't send close socket and throw the error
                         try {
-                            while (userNetworkTaskActive || (!outGoing.isEmpty())) {
-                                if (!outGoing.isEmpty()) {
-//                                    Log.v(NetworkIOFragment.class.getSimpleName(), "sending = " + outGoing.peek());
-                                    mTcpClient.sendMessage(outGoing.poll());
+                            while (mUserNetworkTaskActive || (!mOutGoing.isEmpty())) {
+                                if (!mOutGoing.isEmpty()) {
+//                                    Log.v(NetworkIOFragment.class.getSimpleName(), "sending = " + mOutGoing.peek());
+                                    mTcpClient.sendMessage(mOutGoing.poll());
                                 }
 
                             }
