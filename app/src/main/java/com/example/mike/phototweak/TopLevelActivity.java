@@ -37,8 +37,6 @@ public class TopLevelActivity extends AppCompatActivity
         SharedPreferences.OnSharedPreferenceChangeListener,
         TabLayout.OnTabSelectedListener {
 
-    // Help/Info screen
-    WebView mHelpView;
     // A reference to the NetworkFragment which that is used to execute network ops.
     private NetworkIOFragment mNetwork;
 
@@ -262,13 +260,11 @@ public class TopLevelActivity extends AppCompatActivity
         // Add tabs
         TabLayout mTabLayout = (TabLayout) findViewById(R.id.tabs);
         mTabLayout.setOnTabSelectedListener(this);
-        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_wb_sunny_black_48dp));
-        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_hourglass_full_black_48dp));
+       //        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_wb_sunny_black_48dp));
+        mTabLayout.addTab(mTabLayout.newTab().setText("Level"));
+       // mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_hourglass_full_black_48dp));
+        mTabLayout.addTab(mTabLayout.newTab().setText("Fade"));
 
-        mHelpView = (WebView) findViewById(R.id.webview);
-        String infoPage = getString(R.string.infopage);
-        mHelpView.loadData(infoPage,"text/html","utf-8");
-        // mHelpView.setVisibility(View.VISIBLE);
 
 
     }

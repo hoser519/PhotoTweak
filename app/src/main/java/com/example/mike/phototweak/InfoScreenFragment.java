@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 
 
 /**
@@ -18,6 +19,10 @@ import android.view.ViewGroup;
 public class InfoScreenFragment extends DialogFragment {
 
     public static final String TAG = "InfoScreenFragment";
+    // Help/Info screen
+    WebView mHelpView;
+    View infoView;
+
     public InfoScreenFragment() {
         // Required empty public constructor
     }
@@ -54,7 +59,16 @@ public class InfoScreenFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_info_screen, container, false);
+        infoView =  inflater.inflate(R.layout.fragment_info_screen, container, false);
+
+        // Load webpage
+        mHelpView = (WebView) infoView.findViewById(R.id.webview);
+        mHelpView.loadUrl("file:///android_asset/info.html");
+        //   String infoPage = getString(R.string.infopage);
+        // mHelpView.loadData(infoPage,"text/html","utf-8");
+        //mHelpView.setVisibility(View.VISIBLE);
+        return infoView;
+
     }
 
     @Override
